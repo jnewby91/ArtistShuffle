@@ -26,14 +26,20 @@ function firstCall(result) {
     const likeArtist = result.similarartists.artist[0].name;
     console.log(likeArtist);
 
-    getiTunesdata(likeArtist, secondCall);
+    getiTunesdata(likeArtist,function(data){
+        console.log('this is is what the data is:', data);
+        $('.js-audioQuests').html(secondCall(data))   
+    })
+    // $('.js-audioQuests').html(getiTunesdata(likeArtist, secondCall));
 
 }
 
 function secondCall(result){
-    console.log(result.results[0].previewUrl);
+    // console.log(result.results[0].previewUrl); 
    // const songPreview = '';
-
+   return `<audio controls>
+        <source src=${result.results[0].previewUrl} type='audio/mp4'>
+        </audio> `
 }
 
 
