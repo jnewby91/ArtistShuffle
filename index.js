@@ -37,18 +37,29 @@ function firstCall(result) {
 function secondCall(result){
     // console.log(result.results[0].previewUrl); 
    // const songPreview = '';
-   return `<audio controls>
+   return `
+        <h2> Do You Know the Artist to this Song? </h2>
+        <button type="button">Yes, I know the Artist of this song!</button>
+        <button type="button">I've never heard this before...</button>
+        <audio controls>
         <source src=${result.results[0].previewUrl} type='audio/mp4'>
         </audio> `
+}
+
+function hidePage(target){
+     
+    $(target).hide();
 }
 
 
 function getData() {
 	$('.searchForm').submit(function(event) {
 		event.preventDefault();
-		const searchVal = $('#search').val();
+        const searchVal = $('#search').val();
+        hidePage('.js-homePage')
 		console.log(searchVal);
-		getLastFMdata(searchVal, firstCall);
+        getLastFMdata(searchVal, firstCall);
+       
 	});
 }
 
