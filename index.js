@@ -1,6 +1,10 @@
 const lastFmURL = 'https://ws.audioscrobbler.com/2.0/';
 const iTunesURL = 'https://itunes.apple.com/search?';
 
+
+const artistSelector = Math.floor((Math.random()*10) + 0)
+const previewSelector = Math.floor((Math.random()*5) + 0);
+
 function getLastFMdata(searchTerm, callback) {
 	const param = {
     method: 'artist.getsimilar',
@@ -23,7 +27,7 @@ function getiTunesdata(searchTerm, callback ){
 
 function firstCall(result) {
     console.log(result);
-    const likeArtist = result.similarartists.artist[0].name;
+    const likeArtist = result.similarartists.artist[artistSelector].name;
     console.log(likeArtist);
 
     getiTunesdata(likeArtist,function(data){
@@ -39,15 +43,17 @@ function secondCall(result){
    // const songPreview = '';
    return `
         <h2> Do You Know the Artist to this Song? </h2>
-        <button type="button">Yes, I know the Artist of this song!</button>
-        <button type="button">I've never heard this before...</button>
+        <h3>${result.results[previewSelector].trackName} </h3>
         <audio controls>
-        <source src=${result.results[0].previewUrl} type='audio/mp4'>
-        </audio> `
+        <source src=${result.results[previewSelector].previewUrl} type='audio/mp4'>
+        </audio> 
+        <button type="button">Yes, I know the Artist of this Song!</button>
+        <button type="button">Don't Know the Artist to this Song?</button>
+        `
 }
 
 function hidePage(target){
-     
+
     $(target).hide();
 }
 
@@ -56,7 +62,7 @@ function getData() {
 	$('.searchForm').submit(function(event) {
 		event.preventDefault();
         const searchVal = $('#search').val();
-        hidePage('.js-homePage')
+        hidePage('.js-homePage');
 		console.log(searchVal);
         getLastFMdata(searchVal, firstCall);
        
