@@ -47,8 +47,9 @@ function secondCall(result){
         <audio controls>
         <source src=${result.results[previewSelector].previewUrl} type='audio/mp4'>
         </audio> 
-        <button type="button">Yes, I know the Artist of this Song!</button>
-        <button type="button">Don't Know the Artist to this Song?</button>
+        <button type="button" id="#knownButton">Yes, I know the Artist of this Song!</button>
+        <button type="button" id="#unknownButton">Don't Know the Artist to this Song?</button>
+        <button type="button" id="#tryAgainButton">Start Another Search</button>
         `
 }
 
