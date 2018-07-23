@@ -5,6 +5,10 @@ const iTunesURL = 'https://itunes.apple.com/search?';
 const artistSelector = Math.floor((Math.random()*10) + 0)
 const previewSelector = Math.floor((Math.random()*5) + 0);
 
+var lastFmData; 
+var iTunesData;
+
+
 function getLastFMdata(searchTerm, callback) {
 	const param = {
     method: 'artist.getsimilar',
@@ -27,6 +31,7 @@ function getiTunesdata(searchTerm, callback ){
 
 function firstCall(result) {
     console.log(result);
+    lastFmData = result;
     const likeArtist = result.similarartists.artist[artistSelector].name;
     console.log(likeArtist);
 
@@ -39,23 +44,42 @@ function firstCall(result) {
 }
 
 function secondCall(result){
-    // console.log(result.results[0].previewUrl); 
-   // const songPreview = '';
+   iTunesData = result; 
+
    return `
         <h2> Do You Know the Artist to this Song? </h2>
         <h3>${result.results[previewSelector].trackName} </h3>
         <audio controls>
         <source src=${result.results[previewSelector].previewUrl} type='audio/mp4'>
         </audio> 
-        <button type="button" id="#knownButton">Yes, I know the Artist of this Song!</button>
-        <button type="button" id="#unknownButton">Don't Know the Artist to this Song?</button>
-        <button type="button" id="#tryAgainButton">Start Another Search</button>
+        <button type="button" id="knownButton">Yes, I know the Artist of this Song!</button>
+        <button type="button" id="unknownButton">Don't Know the Artist to this Song?</button>
+        <button type="button" id="tryAgainButton">Start Another Search</button>
         `
 }
 
 function hidePage(target){
 
     $(target).hide();
+}
+
+function showSongInformation(data){
+    return `
+        <h2> The Artist you just heard is: ${data.results[previewSelector].artistName}</h2>
+        <img src=${data.results[previewSelector].artworkUrl100}/>
+        <h3>Song Name: ${data.results[previewSelector].trackName}</h3>
+        <h3>Album Name: ${data.results[previewSelector].collectionName}</h3>
+        <button type="button" id="#tryAgainButton">Start Another Search</button>
+        `
+}
+
+function showMusicInfomation(data){
+        console.log('the beginning of the showMusicInfomation function')
+    $('.js-audioQuests').on('click','#unknownButton', function(){
+        hidePage('.js-audioQuests');
+        $('.js-resultPage').html(showSongInformation(iTunesData)); 
+        console.log('this actually ran');
+    });
 }
 
 
@@ -72,4 +96,8 @@ function getData() {
 
 
 
-$(getData);
+$(function(){
+    getData();
+    showMusicInfomation();
+
+});
