@@ -67,7 +67,7 @@ function showPage(target){
     $(target).show();
 }
 
-function restartArtistSearch(){
+function restartArtistSearch_audioQuests(){
     $('.js-audioQuests').on('click', '#tryAgainButton', function(){
         console.log('the restartArtistSearch function ran');
         hidePage('.js-audioQuests');
@@ -86,6 +86,8 @@ function showSongInformation(data){
         `
 }
 
+
+
 function showMusicInfomation(data){
         console.log('the beginning of the showMusicInfomation function')
     $('.js-audioQuests').on('click','#unknownButton', function(){
@@ -93,6 +95,15 @@ function showMusicInfomation(data){
         $('.js-resultPage').html(showSongInformation(iTunesData)); 
         console.log('this actually ran');
     });
+}
+
+function restartArtistSearch_resultPage(){
+    $('.js-resultPage').on('click', '#tryAgainButton', function(){
+        console.log('the restartArtistSearch function ran');
+        hidePage('.js-resultPage');
+        showPage(".js-homePage");
+    })
+
 }
 
 function nextArtistSearch(){
@@ -124,6 +135,7 @@ $(function(){
     getData();
     showMusicInfomation();
     nextArtistSearch();
-    restartArtistSearch();
+    restartArtistSearch_audioQuests();
+    restartArtistSearch_resultPage();
 
 });
