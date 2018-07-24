@@ -24,7 +24,7 @@ function getiTunesdata(searchTerm, callback ){
     const param = {
       term: encodeURIComponent(searchTerm).replace(/%20/g, '+'), 
       country: 'US',
-      limit : 5
+      limit : 10
     }
     $.getJSON(iTunesURL,param, callback);
   }
