@@ -2,8 +2,8 @@ const lastFmURL = 'https://ws.audioscrobbler.com/2.0/';
 const iTunesURL = 'https://itunes.apple.com/search?';
 
 
-const artistSelector = Math.floor((Math.random()*10) + 0)
-const previewSelector = Math.floor((Math.random()*5) + 0);
+var artistSelector = Math.floor((Math.random()*10) + 0);
+var previewSelector = Math.floor((Math.random()*5) + 0);
 
 var lastFmData; 
 var iTunesData;
@@ -82,6 +82,16 @@ function showMusicInfomation(data){
     });
 }
 
+function nextArtistSearch(){
+    console.log('the beginning of nextArtistSearch function')
+    $('.js-audioQuests').on('click','#knownButton', function(){
+        artistSelector = Math.floor((Math.random()*10) + 0);
+        previewSelector = Math.floor((Math.random()*10) + 0);
+        $('.js-audioQuests').html(firstCall(lastFmData));
+        console.log('the function ran');
+    });
+}
+
 
 function getData() {
 	$('.searchForm').submit(function(event) {
@@ -99,5 +109,6 @@ function getData() {
 $(function(){
     getData();
     showMusicInfomation();
+    nextArtistSearch();
 
 });
