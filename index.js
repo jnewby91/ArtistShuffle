@@ -63,6 +63,19 @@ function hidePage(target){
     $(target).hide();
 }
 
+function showPage(target){
+    $(target).show();
+}
+
+function restartArtistSearch(){
+    $('.js-audioQuests').on('click', '#tryAgainButton', function(){
+        console.log('the restartArtistSearch function ran');
+        hidePage('.js-audioQuests');
+        showPage(".js-homePage");
+    })
+
+}
+
 function showSongInformation(data){
     return `
         <h2> The Artist you just heard is: ${data.results[previewSelector].artistName}</h2>
@@ -97,6 +110,7 @@ function getData() {
 	$('.searchForm').submit(function(event) {
 		event.preventDefault();
         const searchVal = $('#search').val();
+        showPage('.js-audioQuests');
         hidePage('.js-homePage');
 		console.log(searchVal);
         getLastFMdata(searchVal, firstCall);
@@ -110,5 +124,6 @@ $(function(){
     getData();
     showMusicInfomation();
     nextArtistSearch();
+    restartArtistSearch();
 
 });
