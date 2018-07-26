@@ -23,8 +23,7 @@ function getLastFMdata(searchTerm, callback) {
 function getiTunesdata(searchTerm, callback ){ 
     const param = {
       term: encodeURIComponent(searchTerm).replace(/%20/g, '+'), 
-      country: 'US',
-      kind: 'song', 
+      country: 'US', 
       limit : 10
     }
     $.getJSON(iTunesURL,param, callback);
