@@ -24,6 +24,7 @@ function getiTunesdata(searchTerm, callback ){
     const param = {
       term: encodeURIComponent(searchTerm).replace(/%20/g, '+'), 
       country: 'US',
+      kind: 'song', 
       limit : 10
     }
     $.getJSON(iTunesURL,param, callback);
@@ -69,7 +70,7 @@ function showPage(target){
 
 function restartArtistSearch_audioQuests(){
     $('.js-audioQuests').on('click', '#tryAgainButton', function(){
-        console.log('the restartArtistSearch function ran');
+        console.log('the restartArtistSearch_audioQuests() function ran');
         hidePage('.js-audioQuests');
         showPage(".js-homePage");
     })
@@ -82,7 +83,7 @@ function showSongInformation(data){
         <img src=${data.results[previewSelector].artworkUrl100}/>
         <h3>Song Name: ${data.results[previewSelector].trackName}</h3>
         <h3>Album Name: ${data.results[previewSelector].collectionName}</h3>
-        <button type="button" id="#tryAgainButton">Start Another Search</button>
+        <button type="button" id="tryAgainButton">Start Another Search</button>
         `
 }
 
@@ -93,13 +94,14 @@ function showMusicInfomation(data){
     $('.js-audioQuests').on('click','#unknownButton', function(){
         hidePage('.js-audioQuests');
         $('.js-resultPage').html(showSongInformation(iTunesData)); 
+        restartArtistSearch_resultPage();
         console.log('this actually ran');
     });
 }
 
 function restartArtistSearch_resultPage(){
     $('.js-resultPage').on('click', '#tryAgainButton', function(){
-        console.log('the restartArtistSearch function ran');
+        console.log('the restartArtistSearch_resultPage() function ran');
         hidePage('.js-resultPage');
         showPage(".js-homePage");
     })
@@ -136,6 +138,6 @@ $(function(){
     showMusicInfomation();
     nextArtistSearch();
     restartArtistSearch_audioQuests();
-    restartArtistSearch_resultPage();
+    
 
 });
