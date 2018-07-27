@@ -52,9 +52,9 @@ function secondCall(result){
         <audio controls>
         <source src=${result.results[previewSelector].previewUrl} type='audio/mp4'>
         </audio> 
-        <button type="button" id="knownButton">Yes, I know the Artist of this Song!</button>
-        <button type="button" id="unknownButton">Don't Know the Artist to this Song?</button>
-        <button type="button" id="tryAgainButton">Start Another Search</button>
+        <button type="button" id="knownButton"> Recognize the Artist to Song!</button>
+        <button type="button" id="unknownButton">Don't Recognize the Artist to Song?</button>
+        <button type="button" id="tryAgainButton">Start Over</button>
         `
 }
 
@@ -82,7 +82,7 @@ function showSongInformation(data){
         <img src=${data.results[previewSelector].artworkUrl100}/>
         <h3>Song Name: ${data.results[previewSelector].trackName}</h3>
         <h3>Album Name: ${data.results[previewSelector].collectionName}</h3>
-        <button type="button" id="tryAgainButton">Start Another Search</button>
+        <button type="button" id="tryAgainButton">Start Over</button>
         `
 }
 

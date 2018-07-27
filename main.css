@@ -2,6 +2,12 @@
 main{
     text-align: center; 
 }
+
+audio{
+    margin: 0;
+    padding: 20px 0px 40px 200px;
+    /* display: block; */
+}
 fieldset{
     border: none;
 }
