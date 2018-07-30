@@ -2,6 +2,9 @@
 main{
     text-align: center; 
 }
+li{
+    padding-bottom: 10px;
+}
 
 audio {
     margin: 42px 0px 40px 41%;
@@ -184,13 +187,14 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
-section{
-	font-family: Helvetica;
-	width: max-content;
-	margin: 0px 0px 0px 23%;
-	font-size: 15px;
-    background-color: rgba(195, 183, 183, 0.3);
+
+section {
+    font-family: Georgia;
+    width: max-content;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.81);
     color: white;
+    margin: 0px 0px 0px 20%;
     border-radius: 15px;
 }
 html{
