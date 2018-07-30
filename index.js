@@ -79,7 +79,7 @@ function restartArtistSearch_audioQuests(){
 function showSongInformation(data){
     return `
         <h2> The Artist you just heard is: ${data.results[previewSelector].artistName}</h2>
-        <img src=${data.results[previewSelector].artworkUrl100}/>
+        <img id="Album_Art" src=${data.results[previewSelector].artworkUrl100}/>
         <h3>Song Name: ${data.results[previewSelector].trackName}</h3>
         <h3>Album Name: ${data.results[previewSelector].collectionName}</h3>
         <button type="button" id="tryAgainButton">Start Over</button>

@@ -6,24 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Artist Recommendation</title>
     <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Audiowide|Bangers|Kaushan+Script" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="index.js"></script>
 </head>
 <body>
+    <header>    
+                <h1>Artist Shuffle</h1> 
+                <img id="icon"src="playing card.png" alt="playingCard_icon">
+                <h2><span id="h2_1">Search.</span><span id="h2_2">Listen.</span><span id="h2_3">Discover.</span></h2>
+    </header>
     <main role="main" aria-live="assertive">
         <div class="js-homePage">
             <form action="" class="searchForm">
                 <fieldset>
-                    <h1>Whose That Music Artist? </h1>
                     <!-- Could call the web app: Song Surf -->
                     <input type="text" name="artistSearch" placeholder="Start by Adding Your Favorite Music Artist" id="search">
-                    <button type="submit">Find Artist</button>
-                    <h2> Discover a Music Artist by Sampling 30 second Music Clips </h2>
-                    <p>Enter a Music Artist in Search</p>
-                    <p>Click through each audio sample until you don’t recognize the Music Artist</p>
-                    <p>We’ll give you the name of the Artist, Album, and where to Purchase it on iTunes</p>
+                    <button type="submit" id="newSearch">Find Artist</button>
                 </fieldset>
             </form>
+            <section>
+                    <h2>HOW IT WORKS: </h2>
+                    <p>Enter a Familiar Artist in Search</p>
+                    <p>Listen to the 30 second clip of Similar Artist</p>
+                    <p>We’ll give you the name of the Artist, Album, and where to purchase it on iTunes</p>
+            </section>
+            
         </div>
         <div class="js-audioQuests">
         </div>

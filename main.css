@@ -3,15 +3,187 @@ main{
     text-align: center; 
 }
 
-audio{
-    margin: 0;
-    padding: 20px 0px 40px 200px;
-    /* display: block; */
+audio {
+    margin: 42px 0px 40px 41%;
+    display: block;
 }
 fieldset{
     border: none;
 }
 #search{
-    width: 300px;
-    height: 30px;
+    border: 2px white solid;
+    border-radius: 4px;
+    width: 500px;
+    height: 45px;
+    font-family: unset;
+    font-size: 18px;
+    margin-right: 5px;
+}
+input#search:hover {
+    border: 3px solid #bb0000;
+}
+input#search:focus {
+    border: 3px solid #bb0000;
+}
+#newSearch{
+    height:30px;
+}
+*{
+    box-sizing: border-box;
+}
+fieldset{
+    border: none;
+    text-align: center;
+}
+header{
+    text-align: center;
+    padding: 0px 0px 0px 20px;
+    position: relative;
+    max-width: 100%;
+    top: 0;
+    left: 0;
+    /* background-color: rgba(0, 0, 0, 0.43); */
+    /* background-color: rgba(41, 38, 38, 0.87); */
+}
+#icon{ 
+    position: relative;
+    top: 12px;
+    left:4px;
+    transform: rotate(30deg);
+    width: 30px;
+    height:50px;
+}
+#Album_Art {
+    width: 18%;
+}
+h1{
+    display: inline;
+    font-size: 50px;
+    font-family: 'Kaushan Script', cursive;
+    color: #bb0000;
+    margin: 0;
+    text-shadow: 2px 2px black;
+}
+
+#h2_1{
+    font-size: 1.4em;
+    color: #bb0000;
+    font-family: Bangers;
+    padding-right: 10px;
+    font-weight: 500;
+    text-shadow: 1px 1px white;
+}
+#h2_2{
+    font-size: 1.4em;
+    color:#BBB913  ;
+    padding-right: 10px;
+    font-family: Bangers;
+    font-weight: 500;
+    text-shadow: 1px 1px white ;
+}
+#h2_3{
+    font-size: 1.4em;
+    color: black ;
+    font-family: Bangers;
+    font-weight: 500;
+    text-shadow: 1px 1px #bb0000 ;
+
+}
+button#newSearch {
+    display: inline;
+    font-family: 'Kaushan Script', sans-serif;
+    border-radius: 10px;
+    height: 40px;
+    background-color: #bb0000;
+    color: white;
+    /* font-family: Segoe UI; */
+    font-size: 20px;
+}
+.background{
+    background-color:white;
+}
+#search{
+    width: 500px;
+    height: 40px;
+    font-family: 'Bangers', cursive;
+    font-size: 24px;
+}
+.js-audioQuests {
+    color: white;
+    font-family: Sans-serif;
+    font-size: 1.3em;
+    text-shadow: 2px 2px black ;
+}
+button#knownButton {
+    background-color: black;
+    font-size: 15px;
+    color: #BBB913;
+    border: 2px solid #bb0000;
+    border-radius: 10px;
+    height: 50px;
+    font-family: Bangers;
+}
+
+button#unknownButton {
+    background-color: black;
+    font-size: 15px;
+    color: #BBB913;
+    border: 2px solid #bb0000;
+    border-radius: 10px;
+    height: 50px;
+    font-family: Bangers;
+}
+button#tryAgainButton {
+    background-color: black;
+    font-size: 15px;
+    color: #BBB913;
+    border: 2px solid #bb0000;
+    border-radius: 10px;
+    height: 50px;
+    font-family: Bangers;
+}
+button#knownButton:hover {
+    background-color: black;
+    font-size: 15px;
+    color: #bb0000;
+    border: 2px solid white;
+    border-radius: 10px;
+    height: 50px;
+    font-family: Bangers;
+}
+button#unknownButton:hover {
+    background-color: black;
+    font-size: 15px;
+    color: #bb0000;
+    border: 2px solid white;
+    border-radius: 10px;
+    height: 50px;
+    font-family: Bangers;
+}
+button#tryAgainButton:hover {
+    background-color: black;
+    font-size: 15px;
+    color: #bb0000;
+    border: 2px solid white;
+    border-radius: 10px;
+    height: 50px;
+    font-family: Bangers;
+}
+.js-resultPage {
+    color: white;
+}
+body{
+    color:  black;  
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+section{
+    margin-top: 129px;
+    background-color: rgba(195, 183, 183, 0.3);
+    color: white;
+    border-radius: 15px;
+}
+html{
+    background-image: url(Black-Elegant-Backgrounds-HD.jpg);
+    background-position: center;
 }
