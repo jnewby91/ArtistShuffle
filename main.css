@@ -124,7 +124,7 @@ button#newSearch {
     font-size: 1.3em;
     text-shadow: 2px 2px black ;
 }
-button#knownButton {
+button#knownButton, button#unknownButton, button#tryAgainButton{
     background-color: black;
     font-size: 15px;
     color: #BBB913;
@@ -134,7 +134,7 @@ button#knownButton {
     font-family: Bangers;
 }
 
-button#unknownButton {
+/*button#unknownButton {
     background-color: black;
     font-size: 15px;
     color: #BBB913;
@@ -151,7 +151,7 @@ button#tryAgainButton {
     border-radius: 10px;
     height: 50px;
     font-family: Bangers;
-}
+}*/
 button#knownButton:hover {
     background-color: black;
     font-size: 15px;
@@ -200,4 +200,9 @@ section {
 html{
     background-image: url(Black-Elegant-Backgrounds-HD.jpg);
     background-position: center;
+}
+.modal{
+    display: none;
+    position: absolute;
+
 }

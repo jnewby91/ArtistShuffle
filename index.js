@@ -86,6 +86,14 @@ function showSongInformation(data){
         `
 }
 
+function modalListener(){
+    $('.instructions').click(function(){
+        showPage('.modal');
+    })
+    $('.close').click(function(){
+        hidePage('.modal');
+    })
+}
 
 
 function showMusicInfomation(data){
@@ -134,6 +142,7 @@ function getData() {
 
 
 $(function(){
+    modalListener();
     getData();
     showMusicInfomation();
     nextArtistSearch();

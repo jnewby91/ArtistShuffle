@@ -25,23 +25,24 @@
                     <button type="submit" id="newSearch">Discover Music</button>
                 </fieldset>
             </form>
-            <section>
-                    <h2>HOW IT WORKS: </h2>
-                        <ol>
-                            <li>Enter a Music Artist in the Search Box</li> 
-                            <li>Click Discover Music button </li> 
-                            <li>Press play on audio track and a 30s preview a SIMILAR artist will be played</li>  
-                            <li>Click the Recognize button if you know the Artist of the Song and a new track with another similar artist will be displayed </li> 
-                            <li>Click the Don’t Recognize button if you don’t know the artist of the song and the song just listened to will be displayed </li> 
-                            <li>Click Start Over at any time to enter another search</li> 
-                        </ol>    
-            </section>            
+
+            <button class="instructions"><h2>HOW IT WORKS</h2></button>           
         </div>
         <div class="js-audioQuests">
         </div>
         <div class="js-resultPage">            
         </div>
-
-    </main>    
+    </main>   
+    <section class="modal">         
+        <ol>
+            <li>Enter a Music Artist in the Search Box</li> 
+            <li>Click Discover Music button </li> 
+            <li>Press play on audio track and a 30s preview a SIMILAR artist will be played</li>  
+            <li>Click the Recognize button if you know the Artist of the Song and a new track with another similar artist will be displayed </li> 
+            <li>Click the Don’t Recognize button if you don’t know the artist of the song and the song just listened to will be displayed </li> 
+            <li>Click Start Over at any time to enter another search</li> 
+        </ol>
+        <button class="close">CLOSE</button>    
+    </section>  
 </body>
 </html>
