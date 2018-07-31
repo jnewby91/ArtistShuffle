@@ -92,6 +92,7 @@ function showMusicInfomation(data){
         console.log('the beginning of the showMusicInfomation function')
     $('.js-audioQuests').on('click','#unknownButton', function(){
         hidePage('.js-audioQuests');
+        showPage('.js-resultPage');
         $('.js-resultPage').html(showSongInformation(iTunesData)); 
         restartArtistSearch_resultPage();
         console.log('this actually ran');
