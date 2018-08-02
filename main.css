@@ -7,7 +7,7 @@ li{
 }
 
 audio {
-    margin: 42px 0px 40px 41%;
+    margin: 40px auto;
     display: block;
 }
 fieldset{
@@ -21,6 +21,7 @@ fieldset{
     font-family: unset;
     font-size: 18px;
     margin-right: 5px;
+    margin-top: 20px;
 }
 input#search:hover {
     border: 3px solid #bb0000;
@@ -28,13 +29,11 @@ input#search:hover {
 input#search:focus {
     border: 3px solid #bb0000;
 }
-#newSearch{
-    height:30px;
-}
 *{
     box-sizing: border-box;
 }
 fieldset{
+    padding: 0;
     border: none;
     text-align: center;
 }
@@ -86,7 +85,7 @@ h1{
 }
 #h2_3{
     font-size: 1.4em;
-    color: black ;
+    color: white ;
     font-family: Bangers;
     font-weight: 500;
     text-shadow: 1px 1px #bb0000 ;
@@ -99,9 +98,10 @@ ol {
 section h2{
     font-family: Kaushan Script;
 }
-button#newSearch {
+button#newSearch, .close {
     display: inline;
     font-family: 'Kaushan Script', sans-serif;
+    margin: 30px 0px 0px 0px;
     border-radius: 10px;
     height: 40px;
     background-color: #bb0000;
@@ -152,7 +152,7 @@ button#tryAgainButton {
     height: 50px;
     font-family: Bangers;
 }*/
-button#knownButton:hover {
+button#knownButton:hover{
     background-color: black;
     font-size: 15px;
     color: #bb0000;
@@ -196,6 +196,7 @@ section {
     color: white;
     margin: 0px 0px 0px 20%;
     border-radius: 15px;
+    text-align: center;
 }
 html{
     background-image: url(Black-Elegant-Backgrounds-HD.jpg);
@@ -204,5 +205,61 @@ html{
 .modal{
     display: none;
     position: absolute;
+    /* bottom: 100px; */
+    color:#BBB913;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: black;
+}
+.instructions, .instructions:hover {
+    border: 4px solid  #bb0000;
+    height: 82px;
+    width: 180px;
+    font-size: 18px;
+    border-radius: 10px;
+    font-family: Bangers;
+}
 
+.instructions{
+    margin: 15px 0px 0px 0px;
+    background-color: black;
+    color:#bb0000;
+}
+.instructions:hover{
+    border-color: white;
+    background-color: #bb0000;
+    color:white;
+    margin: 15px 0px 0px 0px;
+}
+.close{
+    background-color: black;
+    color: white;
+    font-family: Bangers;
+}
+@media only screen and (min-width: 320px){
+    #search{
+        width: 300px;
+    }
+    .instructions, .instructions:hover{
+        margin: 10px 0px 0px 0px;
+    }
+    .modal{
+        max-width: 70%;
+        margin-top: 20px;
+    }
+    
+}
+
+
+@media only screen and (min-width: 960px){
+    #search{
+        width: 500px;
+    }
+    .instructions, .instructions:hover{
+        margin: 10px 0px 0px 0px;
+    }
+    .modal{
+        max-width: 70%;
+        margin-top: 20px;
+    }
 }

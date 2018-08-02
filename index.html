@@ -1,48 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Artist Recommendation</title>
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="grid.css">
     <link href="https://fonts.googleapis.com/css?family=Audiowide|Bangers|Kaushan+Script" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="index.js"></script>
 </head>
+
 <body>
-    <header>    
-                <h1>Artist Shuffle</h1> 
-                <img id="icon"src="playing card.png" alt="playingCard_icon">
-                <h2><span id="h2_1">Search.</span><span id="h2_2">Listen.</span><span id="h2_3">Discover.</span></h2>
+    <header>
+        <div class="row">
+            <div class="col-12">
+                <h1>Artist Shuffle</h1>
+                <img id="icon" src="playing card.png" alt="playingCard_icon">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h2>
+                    <span id="h2_1">Search.</span>
+                    <span id="h2_2">Listen.</span>
+                    <span id="h2_3">Discover.</span>
+                </h2>
+            </div>
+        </div>
     </header>
     <main role="main" aria-live="assertive">
         <div class="js-homePage">
             <form action="" class="searchForm">
                 <fieldset>
-                    <!-- Could call the web app: Song Surf -->
-                    <input type="text" name="artistSearch" placeholder="Start by Adding Your Favorite Music Artist" id="search">
-                    <button type="submit" id="newSearch">Discover Music</button>
+                    <div class="row">
+                        <div class="col-12">
+                            <input type="text" name="artistSearch" placeholder="Enter Your Favorite Music Artist" id="search">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="submit" id="newSearch">Discover Music</button>
+                        </div>
+                    </div>
                 </fieldset>
             </form>
 
-            <button class="instructions"><h2>HOW IT WORKS</h2></button>           
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <button class="instructions">HOW IT WORKS</button>
+            </div>
         </div>
         <div class="js-audioQuests">
         </div>
-        <div class="js-resultPage">            
+        <div class="js-resultPage">
         </div>
-    </main>   
-    <section class="modal">         
+    </main>
+    <section class="modal">
         <ol>
-            <li>Enter a Music Artist in the Search Box</li> 
-            <li>Click Discover Music button </li> 
-            <li>Press play on audio track and a 30s preview a SIMILAR artist will be played</li>  
-            <li>Click the Recognize button if you know the Artist of the Song and a new track with another similar artist will be displayed </li> 
-            <li>Click the Don’t Recognize button if you don’t know the artist of the song and the song just listened to will be displayed </li> 
-            <li>Click Start Over at any time to enter another search</li> 
+            <li>Enter a Music Artist in the Search Box</li>
+            <li>Click Discover Music button </li>
+            <li>Press play on audio track and a 30s preview a SIMILAR artist will be played</li>
+            <li>Click the Recognize button if you know the Artist of the Song and a new track with another similar artist will
+                be displayed </li>
+            <li>Click the Don’t Recognize button if you don’t know the artist of the song and the song just listened to will
+                be displayed </li>
+            <li>Click Start Over at any time to enter another search</li>
         </ol>
-        <button class="close">CLOSE</button>    
-    </section>  
+        <button class="close">CLOSE</button>
+    </section>
 </body>
+
 </html>
